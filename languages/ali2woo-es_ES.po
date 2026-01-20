@@ -1,0 +1,134 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Ali2Woo 1.23.5\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-02-20 10:00+0000\n"
+"PO-Revision-Date: 2025-02-14 00:00+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es_ES\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: manual\n"
+
+msgid "Search Products"
+msgstr "Buscar productos"
+
+msgid "Search In Store"
+msgstr "Buscar en la tienda"
+
+msgid "Search for products"
+msgstr "Buscar productos"
+
+msgid "Import product by URL or ID"
+msgstr "Importar producto por URL o ID"
+
+msgid "Enter Keywords"
+msgstr "Introduce palabras clave"
+
+msgid "Search"
+msgstr "Buscar"
+
+msgid "Advance"
+msgstr "Avanzado"
+
+msgid "Price"
+msgstr "Precio"
+
+msgid "Price from"
+msgstr "Precio desde"
+
+msgid "Price to"
+msgstr "Precio hasta"
+
+msgid "Special filters"
+msgstr "Filtros especiales"
+
+msgid "Free shipping"
+msgstr "Envío gratis"
+
+msgid "Free return"
+msgstr "Devolución gratis"
+
+msgid "Popular products"
+msgstr "Productos populares"
+
+msgid "Show shipping price to"
+msgstr "Mostrar precio de envío a"
+
+msgid "We will display the cheapest shipping option on the results page"
+msgstr "Mostraremos la opción de envío más barata en la página de resultados"
+
+msgid "Product URL"
+msgstr "URL del producto"
+
+msgid "Product ID"
+msgstr "ID del producto"
+
+msgid "Import"
+msgstr "Importar"
+
+msgid "Add all to import list"
+msgstr "Añadir todo a la lista de importación"
+
+msgid "Sort by:"
+msgstr "Ordenar por:"
+
+msgid "Best Match"
+msgstr "Mejor coincidencia"
+
+msgid "Lowest price"
+msgstr "Precio más bajo"
+
+msgid "Highest price"
+msgstr "Precio más alto"
+
+msgid "Seller's feedback score"
+msgstr "Puntuación de comentarios del vendedor"
+
+msgid "Lowest commission rate"
+msgstr "Menor tasa de comisión"
+
+msgid "Highest commission rate"
+msgstr "Mayor tasa de comisión"
+
+msgid "Highest sales"
+msgstr "Más ventas"
+
+msgid "Latest"
+msgstr "Más recientes"
+
+msgid "Lowest valid time"
+msgstr "Menor tiempo de validez"
+
+msgid "Highest valid time"
+msgstr "Mayor tiempo de validez"
+
+msgid "products not found"
+msgstr "productos no encontrados"
+
+msgid "Orders"
+msgstr "Pedidos"
+
+msgid "Remove from import list"
+msgstr "Quitar de la lista de importación"
+
+msgid "Add to import list"
+msgstr "Añadir a la lista de importación"
+
+msgid "Save settings"
+msgstr "Guardar ajustes"
+
+msgid "Reviews settings"
+msgstr "Ajustes de reseñas"
+
+msgid "Account settings"
+msgstr "Ajustes de la cuenta"
+
+msgid "Get Access Token"
+msgstr "Obtener token de acceso"
+
+msgid "Ali2Woo"
+msgstr "Ali2Woo"
