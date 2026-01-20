@@ -59,6 +59,8 @@ if (!class_exists('A2W_Main')) {
             $this->version = $plugin_data['Version'];
             $this->plugin_name = plugin_basename(A2W_PLUGIN_FILE);
 
+            add_action('plugins_loaded', array($this, 'load_textdomain'));
+
             require_once $this->plugin_path() . "/includes/libs/taobao-sdk/TopSdk.php";
 
             require_once $this->plugin_path() . '/includes/libs/wp-background-processing/wp-background-processing.php';
@@ -89,6 +91,11 @@ if (!class_exists('A2W_Main')) {
             add_action('admin_enqueue_scripts', array($this, 'admin_assets'));
 
             add_action('wp_enqueue_scripts', array($this, 'assets'));
+        }
+
+        public function load_textdomain()
+        {
+            load_plugin_textdomain('ali2woo', false, basename(dirname(__FILE__)) . '/languages');
         }
 
         /**
@@ -156,6 +163,12 @@ if (!function_exists('A2W')) {
 }
 
 $ali2woo = A2W();
+
+add_action('before_woocommerce_init', function () {
+    if (class_exists(\Automattic\WooCommerce\Utilities\FeaturesUtil::class)) {
+        \Automattic\WooCommerce\Utilities\FeaturesUtil::declare_compatibility('custom_order_tables', __FILE__, true);
+    }
+});
 
 /**
  * Ali2Woo global init action

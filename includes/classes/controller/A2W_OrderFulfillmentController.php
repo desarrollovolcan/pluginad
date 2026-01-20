@@ -584,9 +584,6 @@ if (!class_exists('A2W_OrderFulfillmentController')) {
 
             $token = A2W_AliexpressToken::getInstance()->defaultToken();
             
-            $purchase_code = A2W_Account::getInstance()->get_purchase_code();
-            
-            
             ?>
             <div class="modal-overlay modal-fulfillment">
                 <div class="modal-content">
@@ -596,7 +593,7 @@ if (!class_exists('A2W_OrderFulfillmentController')) {
                     </div>
                     <div class="modal-body"></div>
                     <div class="modal-footer">
-                        <?php if($token && $purchase_code):?>
+                        <?php if($token):?>
                         <div style="display: inline-block;">
                         <a id="pay-for-orders" target="_blank" class="btn btn-success" href="https://www.aliexpress.com/p/order/index.html" title="<?php _e('You will be redirected to the AlIExpress portal. You must be authorized in your account to make the payment', 'ali2woo');?>"><?php _e('Pay for order(s)', 'ali2woo');?></a>
                         <button id="fulfillment-auto" class="btn btn-success" type="button">
@@ -607,12 +604,10 @@ if (!class_exists('A2W_OrderFulfillmentController')) {
 
                         <?php endif; ?>
 
-                        <?php if($purchase_code):?>
                         <button id="fulfillment-chrome" class="btn btn-success" type="button">
                             <div class="btn-icon-wrap cssload-container"><div class="cssload-speeding-wheel"></div></div>
                             <?php _e('Fulfil orders via Chrome extension', 'ali2woo');?>
                         </button>
-                        <?php endif; ?>
                         <button class="btn btn-default modal-close" type="button"><?php _e('Close');?></button>
                     </div>
                 </div>
@@ -785,9 +780,7 @@ if (!class_exists('A2W_OrderFulfillmentController')) {
                 }
             }
             
-            if (empty(A2W_Account::getInstance()->get_purchase_code())) {
-                echo '<div class="empty">' . __("Purchase code not found. Input your purchase code in the plugin settings.", 'ali2woo') . '</div>';
-            } else  if (empty($orders_data)) {
+            if (empty($orders_data)) {
                 echo '<div class="empty">' . __("Orders not found", 'ali2woo') . '</div>';
             } else {
                 foreach ($orders_data as $order_data) {
