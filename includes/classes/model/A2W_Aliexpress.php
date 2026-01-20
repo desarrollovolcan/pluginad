@@ -36,11 +36,19 @@ if (!class_exists('A2W_Aliexpress')) {
             } else {
                 $result = json_decode($request['body'], true);
 
-                if (isset($result['state']) && $result['state'] !== 'error') {
+                if (!is_array($result) || !isset($result['state'])) {
+                    return A2W_ResultBuilder::buildError(__('Invalid response from AliExpress API.', 'ali2woo'));
+                }
+
+                if ($result['state'] !== 'error') {
                     $default_type = a2w_get_setting('default_product_type');
                     $default_status = a2w_get_setting('default_product_status');
 
                     $tmp_urls = array();
+
+                    if (!isset($result['products']) || !is_array($result['products'])) {
+                        $result['products'] = array();
+                    }
 
                     foreach ($result['products'] as &$product) {
                         $product['post_id'] = $wpdb->get_var($wpdb->prepare("SELECT post_id FROM $wpdb->postmeta WHERE meta_key='_a2w_external_id' AND meta_value='%s' LIMIT 1", $product['id']));
