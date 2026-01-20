@@ -8,30 +8,30 @@ Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Connect WooCommerce with AliExpress for dropshipping workflows including import, sync, and order fulfillment.
+Conecta WooCommerce con AliExpress para flujos de dropshipping: importación, sincronización y fulfillment.
 
 == Description ==
-Metaltek AliExpress Dropshipping for WooCommerce lets you import products, synchronize price/stock, and push orders to AliExpress. A mock connector is included for testing.
+Metaltek AliExpress Dropshipping for WooCommerce permite importar productos, sincronizar precio/stock y enviar pedidos a AliExpress. Incluye un conector simulador para pruebas.
 
 == Installation ==
-1. Upload the plugin ZIP in WordPress.
-2. Activate the plugin.
-3. Configure credentials in AliExpress Dropshipping > Settings.
-4. Use Import Products to bring items into WooCommerce.
+1. Subir el ZIP del plugin en WordPress.
+2. Activar el plugin.
+3. Configurar credenciales en Dropshipping AliExpress > Ajustes.
+4. Usar Importar productos para traer artículos a WooCommerce.
 
 == Frequently Asked Questions ==
-= Does this work without AliExpress API access? =
-Yes. Use Mock connector mode to test workflows.
+= ¿Funciona sin acceso a la API de AliExpress? =
+Sí. Usa el modo simulador (Mock) para probar los flujos.
 
 == Screenshots ==
-1. Settings page
-2. Import products
+1. Pantalla de ajustes
+2. Importar productos
 
 == Changelog ==
 = 1.0.0 =
-* Initial release.
+* Lanzamiento inicial.
 
-== Test Checklist ==
+== Checklist de pruebas ==
 * Importación mock
 * Sync productos
 * Crear pedido

@@ -18,6 +18,11 @@ class OfficialApiConnector implements ConnectorInterface {
         return array();
     }
 
+    public function searchProducts( string $keyword ): array {
+        Logger::warn( 'import', 'Official API searchProducts endpoint not configured.' );
+        return array();
+    }
+
     public function importProduct( array $productData ): array {
         return $productData;
     }

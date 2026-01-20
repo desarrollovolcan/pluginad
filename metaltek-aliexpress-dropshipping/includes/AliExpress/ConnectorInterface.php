@@ -7,6 +7,8 @@ interface ConnectorInterface {
 
     public function getProduct( string $productIdOrUrl ): array;
 
+    public function searchProducts( string $keyword ): array;
+
     public function importProduct( array $productData ): array;
 
     public function syncProduct( string $aeProductId ): array;

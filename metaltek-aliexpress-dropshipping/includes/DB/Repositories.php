@@ -50,6 +50,15 @@ class Repositories {
         return $wpdb->get_results( $wpdb->prepare( "SELECT * FROM {$table} ORDER BY id DESC LIMIT %d", $limit ), ARRAY_A );
     }
 
+    public static function get_orders_to_sync( int $limit = 50 ): array {
+        global $wpdb;
+        $table = $wpdb->prefix . 'mad_orders';
+        return $wpdb->get_results(
+            $wpdb->prepare( "SELECT * FROM {$table} WHERE ae_order_id IS NOT NULL AND ae_order_id <> '' ORDER BY id DESC LIMIT %d", $limit ),
+            ARRAY_A
+        );
+    }
+
     public static function insert_queue( array $data ): void {
         global $wpdb;
         $table = $wpdb->prefix . 'mad_queue';

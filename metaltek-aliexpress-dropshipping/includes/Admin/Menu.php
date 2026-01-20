@@ -14,8 +14,8 @@ class Menu {
 
     public function register_menu(): void {
         add_menu_page(
-            __( 'AliExpress Dropshipping', 'metaltek-aliexpress-dropshipping' ),
-            __( 'AliExpress Dropshipping', 'metaltek-aliexpress-dropshipping' ),
+            __( 'Dropshipping AliExpress', 'metaltek-aliexpress-dropshipping' ),
+            __( 'Dropshipping AliExpress', 'metaltek-aliexpress-dropshipping' ),
             'manage_mad_dropshipping',
             'mad-dropshipping',
             array( $this, 'render_settings' ),
@@ -25,8 +25,8 @@ class Menu {
 
         add_submenu_page(
             'mad-dropshipping',
-            __( 'Settings', 'metaltek-aliexpress-dropshipping' ),
-            __( 'Settings', 'metaltek-aliexpress-dropshipping' ),
+            __( 'Ajustes', 'metaltek-aliexpress-dropshipping' ),
+            __( 'Ajustes', 'metaltek-aliexpress-dropshipping' ),
             'manage_mad_dropshipping',
             'mad-dropshipping',
             array( $this, 'render_settings' )
@@ -34,8 +34,8 @@ class Menu {
 
         add_submenu_page(
             'mad-dropshipping',
-            __( 'Import Products', 'metaltek-aliexpress-dropshipping' ),
-            __( 'Import Products', 'metaltek-aliexpress-dropshipping' ),
+            __( 'Importar productos', 'metaltek-aliexpress-dropshipping' ),
+            __( 'Importar productos', 'metaltek-aliexpress-dropshipping' ),
             'manage_mad_dropshipping',
             'mad-import-products',
             array( $this, 'render_import' )
@@ -43,8 +43,8 @@ class Menu {
 
         add_submenu_page(
             'mad-dropshipping',
-            __( 'Orders', 'metaltek-aliexpress-dropshipping' ),
-            __( 'Orders', 'metaltek-aliexpress-dropshipping' ),
+            __( 'Pedidos', 'metaltek-aliexpress-dropshipping' ),
+            __( 'Pedidos', 'metaltek-aliexpress-dropshipping' ),
             'manage_mad_dropshipping',
             'mad-orders',
             array( $this, 'render_orders' )

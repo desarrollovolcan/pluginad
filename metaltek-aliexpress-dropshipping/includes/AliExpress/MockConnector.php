@@ -23,7 +23,14 @@ class MockConnector implements ConnectorInterface {
             'stock' => 50,
             'sku' => 'MOCK-SKU-' . $id,
             'description' => '<p>Mock product description for ' . $id . '</p>',
+            'rating' => 4.6,
+            'orders' => 312,
+            'category' => 'Mock Category',
+            'shipping_time' => '10-15 días',
             'source_url' => 'https://www.aliexpress.com/item/' . $id . '.html',
+            'images' => array(
+                'https://via.placeholder.com/300x300.png?text=AliExpress+' . $id,
+            ),
             'variations' => array(
                 array(
                     'sku' => 'MOCK-' . $id . '-A',
@@ -39,6 +46,27 @@ class MockConnector implements ConnectorInterface {
                 ),
             ),
         );
+    }
+
+    public function searchProducts( string $keyword ): array {
+        $results = array();
+        for ( $i = 0; $i < 5; $i++ ) {
+            $id = wp_rand( 100000, 999999 );
+            $results[] = array(
+                'id' => (string) $id,
+                'title' => sprintf( 'Mock %s Producto %d', $keyword, $id ),
+                'price' => 9.99 + $i,
+                'stock' => 25 + $i,
+                'sku' => 'MOCK-' . $id,
+                'rating' => 4.5,
+                'orders' => 120 + $i,
+                'shipping_time' => '12-18 días',
+                'source_url' => 'https://www.aliexpress.com/item/' . $id . '.html',
+                'image' => 'https://via.placeholder.com/120x120.png?text=AE+' . $id,
+            );
+        }
+
+        return $results;
     }
 
     public function importProduct( array $productData ): array {

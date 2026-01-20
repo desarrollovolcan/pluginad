@@ -115,7 +115,9 @@ class Workers {
         update_post_meta( $order->get_id(), '_mad_ae_order_id', $response['ae_order_id'] );
         update_post_meta( $order->get_id(), '_mad_ae_status', $response['status'] ?? '' );
 
-        $order->add_order_note( __( 'AliExpress order created.', 'metaltek-aliexpress-dropshipping' ) );
+        $order->add_order_note( __( 'Pedido de AliExpress creado.', 'metaltek-aliexpress-dropshipping' ) );
+
+        Queue::enqueue( 'sync_order', (string) $order->get_id(), 10 * MINUTE_IN_SECONDS );
     }
 
     private static function sync_order( string $wc_order_id ): void {
@@ -150,7 +152,7 @@ class Workers {
         update_post_meta( $order->get_id(), '_mad_tracking_number', $response['tracking_number'] ?? '' );
         update_post_meta( $order->get_id(), '_mad_carrier', $response['carrier'] ?? '' );
 
-        $order->add_order_note( __( 'AliExpress order status updated.', 'metaltek-aliexpress-dropshipping' ) );
+        $order->add_order_note( __( 'Estado del pedido de AliExpress actualizado.', 'metaltek-aliexpress-dropshipping' ) );
 
         $settings = get_option( 'mad_settings', array() );
         if ( ( $settings['complete_on_delivery'] ?? 'no' ) === 'yes' && ( $response['status'] ?? '' ) === 'delivered' ) {

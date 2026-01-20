@@ -6,3 +6,32 @@
     display: inline-block;
     margin-right: 10px;
 }
+
+.mad-thumb {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.mad-preview {
+    width: 180px;
+    height: auto;
+    border-radius: 8px;
+}
+
+.mad-table th,
+.mad-table td {
+    vertical-align: middle;
+    font-size: 13px;
+}
+
+.mad-table td {
+    color: #3c434a;
+}
+
+.mad-table .button-link {
+    padding: 0;
+    height: auto;
+    line-height: 1.4;
+}

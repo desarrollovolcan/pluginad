@@ -48,6 +48,13 @@ class Queue {
         }
     }
 
+    public static function enqueue_order_syncs(): void {
+        $orders = Repositories::get_orders_to_sync( 200 );
+        foreach ( $orders as $order ) {
+            self::enqueue( 'sync_order', (string) $order['wc_order_id'] );
+        }
+    }
+
     public static function clear(): void {
         Repositories::clear_queue();
     }
